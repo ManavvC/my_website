@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#"/>
+<link href="ico/favicon.png" rel="shortcut icon">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/animate.min.css">
+<link rel="stylesheet" href="css/swiper.min.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+<title>Wheeled Biped Robot</title>
+<style>
+  .case-details figure.c {
+    float: none;
+    text-align: center;
+  }
+  .case-details figure.c img {
+    float: none;
+    width: auto;
+    display: inline-block;
+  }
+</style>
+</head>
+
+<body>
+<div class="preloader">
+  <div class="inner">
+    <div class="loader">
+      <div class="trackbar">
+        <div class="loadbar"></div>
+      </div>
+    </div>
+    <div class="holder"><span class="typewriter" id="typewriter"></span></div>
+  </div>
+</div>
+
+<div class="transition-overlay">
+  <div class="green-layer"></div>
+  <div class="black-layer"></div>
+</div>
+
+<nav class="navigation-menu">
+  <div class="green-layer"></div>
+  <div class="black-layer"></div>
+  <div class="inner">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">Portfolio</a>
+        <ul>
+          <li><a href="showcases-four-cols.html">4 Columns</a></li>
+          <li><a href="showcases-three-cols.html">3 Columns</a></li>
+          <li><a href="showcases-two-cols.html">2 Columns</a></li>
+        </ul>
+      </li>
+      <li><a href="unicord.html">Hobbies</a></li>
+      <li><a href="index-video-bg.html">Contact Me</a></li>
+    </ul>
+    <address>202 E Green St<br>61820 Champaign<br>217-954 3032</address>
+  </div>
+</nav>
+
+<nav class="navbar">
+  <div class="logo"><a href="index.html"><img src="images/logo.png" alt="Image"></a></div>
+  <div class="email-us"><a href="#"><span>mchopda2</span>@illinois.edu</a></div>
+  <div class="sandwich-nav"><b>MENU</b>
+    <div class="sandwich-btn circle" id="sandwich-btn" data-dist="7"><span></span><span></span></div>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="video-bg">
+    <video src="videos/video.mp4" autoplay muted loop></video>
+  </div>
+  <div class="inner">
+    <h2 data-text="Wheeled Biped Robot">Wheeled Biped Robot</h2>
+  </div>
+  <ul class="social-media">
+    <li><a href="https://www.linkedin.com/in/manavchopda/"><i class="fa fa-linkedin"></i></a></li>
+    <li><a href="https://www.youtube.com/@manavchopda"><i class="fa fa-youtube-play"></i></a></li>
+    <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+  </ul>
+  <div class="scroll-down"><b>SCROLL DOWN</b><span></span></div>
+</header>
+
+<div class="page-header-spacing"></div>
+
+<main>
+<section class="case-details">
+<div class="container">
+<div class="row">
+
+<!-- Project Overview -->
+<div class="col-12 wow fadeInUp">
+  <h3>Project Overview</h3>
+  <p>This project investigates how the physical geometry of a minimal wheeled-biped robot can be engineered to provide passive stability and reduce the burden on active control — a principle known as morphological intelligence. Rather than treating the robot's body as a fixed constraint, the design itself becomes a lever for improving performance.</p>
+  <p>Conducted at the Novel Mobile Robots Lab and Human Dynamics and Controls Lab at the University of Illinois Urbana-Champaign, this work combines a linearized analytical model, a nonlinear simulation with hardware-accurate actuator and sensor models, and a purpose-built adjustable geometry hardware testbed (V3). The goal is to map hip link length, wheel radius, and COM placement to quantitative stability metrics, targeting a workshop paper submission to IROS 2026.</p>
+</div>
+
+<div class="col-12 wow fadeInUp">
+  <figure class="c"><img src="images/case12_01.jpeg" alt="V3 Adjustable Geometry Robot Platform" style="max-width:40%;"></figure>
+</div>
+
+<!-- Hardware Evolution -->
+<div class="col-12 wow fadeInUp">
+  <h3>Hardware Evolution: V1 → V2 → V3</h3>
+  <p>Two prior prototypes were built during summer 2025 to establish the basic wheeled-biped architecture and electronics integration. V1 was a minimal proof-of-concept with a white 3D-printed chassis, establishing the coaxial wheel layout and basic balance controller. V2 scaled up to a full black aluminum-extrusion frame with onboard electronics, hip actuation, and Bluetooth teleoperation — but both used fixed geometry and could not support a systematic morphological study.</p>
+  <p>The V3 platform is the central hardware contribution of the project, specifically designed to allow controlled variation of hip link length, wheel radius, and COM height while holding everything else fixed. It features a modular spine with a sliding battery tray, swappable 3D-printed hip links implemented as four-bar linkages, and a family of interchangeable wheels with TPU tires spanning the full swept radius range.</p>
+</div>
+
+<div class="col-md-6 wow fadeInUp">
+  <figure class="c"><img src="images/case12_02.png" alt="Prototype V1" style="max-width:60%;"></figure>
+</div>
+
+<div class="col-md-6 wow fadeInUp">
+  <figure class="c"><img src="images/case12_03.png" alt="Prototype V2" style="max-width:60%;"></figure>
+</div>
+
+<!-- V1 & V2 videos -->
+<div class="col-12 wow fadeInUp">
+  <h3>V1 & V2 Videos</h3>
+</div>
+
+<div class="col-md-6 wow fadeInUp">
+  <div class="video-container" style="position: relative; padding-bottom: 177.78%; height: 0; overflow: hidden; max-width: 100%; margin-bottom: 30px;">
+    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+    src="https://www.youtube.com/embed/0bMshrhvMgk"
+    title="Wheeled Biped V1 Demo"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+    </iframe>
+  </div>
+</div>
+
+<div class="col-md-6 wow fadeInUp">
+  <div class="video-container" style="position: relative; padding-bottom: 177.78%; height: 0; overflow: hidden; max-width: 100%; margin-bottom: 30px;">
+    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+    src="https://www.youtube.com/embed/qCKYKY6Su14"
+    title="Wheeled Biped V2 Demo"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+    </iframe>
+  </div>
+</div>
+
+<!-- Morphological Configurations -->
+<div class="col-12 wow fadeInUp">
+  <h3>Adjustable Morphological Configurations</h3>
+  <p>The study sweeps five hip link lengths (L ∈ {8, 11, 14, 17, 20} cm) and six wheel radii (r ∈ {3, 4, 5, 6, 7, 8} cm), yielding 30 configurations organized around the dimensionless ratio ρ = L/r. The diagram below illustrates representative combinations across short, medium, and long links paired with small, medium, and large wheels — each producing a qualitatively different inverted-pendulum dynamics.</p>
+</div>
+
+<div class="col-12 wow fadeInUp">
+  <figure class="c"><img src="images/case12_06.png" alt="Adjustable Morphological Configurations Grid" style="max-width:40%;"></figure>
+</div>
+
+<!-- System Model -->
+<div class="col-12 wow fadeInUp">
+  <h3>System Model and Linearized Analysis</h3>
+  <p>The robot is modeled as a planar two-body system: a wheel (mass m₁, radius r) rolling without slip on the ground, and a chassis (mass m₂) connected by a rigid hip link of length L. Generalized coordinates are wheel rotation θ₁ and chassis lean angle θ₂. A Newton-Euler free body analysis yields coupled nonlinear ODEs integrated with RK4 at 10 kHz in simulation.</p>
+  <p>Linearizing about the upright equilibrium produces a 4×4 state-space system. Two competing trends emerge: the unstable eigenvalue scales as λ ≈ √(g/L), so shorter links fall faster and demand higher control bandwidth. Meanwhile, smaller wheels generate more horizontal ground force per unit torque (F = τ/r), giving more authority before saturating the 3 A driver current limit. These trends argue against any single naive optimum and motivate the full factorial sweep.</p>
+</div>
+
+<div class="col-12 wow fadeInUp">
+  <figure class="c"><img src="images/case12_05.png" alt="Planar Free Body Diagram" style="max-width:40%;"></figure>
+</div>
+
+<!-- Four-Bar Linkage -->
+<div class="col-12 wow fadeInUp">
+  <h3>Four-Bar Hip Linkage Design</h3>
+  <p>Each hip link is implemented as a four-bar linkage rather than a direct revolute joint, so the wheel attachment point traces a near-straight vertical line over the working stroke. A revolute joint would sweep the wheel along a circular arc, coupling vertical motion into horizontal COM displacement and complicating the balance problem. Linkage parameters were optimized using differential evolution followed by Nelder-Mead local refinement, achieving RMS lateral deviation on the order of fractions of a millimeter — well within 3D print tolerance. The optimizer is rerun for each hip link length in the sweep to preserve the straight-line property across all V3 configurations.</p>
+</div>
+
+<div class="col-12 wow fadeInUp">
+  <figure class="c"><img src="images/case12_11.png" alt="Four-Bar Linkage Optimizer Output" style="max-width:75%;"></figure>
+</div>
+
+<!-- Simulation Environment -->
+<div class="col-12 wow fadeInUp">
+  <h3>Nonlinear Simulation Environment</h3>
+  <p>A nonlinear time-domain simulation was developed to capture actuator saturation, sensor noise, and closed-loop dynamics beyond what the linearization can predict. The GM3506 motor is modeled from datasheet parameters (K_T = 0.078 Nm/A, R = 5.6 Ω, 3 A driver limit) with a speed-dependent back-EMF torque ceiling. AS5048A encoders are quantized at 14 bits; BNO085 IMU readings carry Gaussian noise matching the datasheet. A cascaded PID controller runs at 500 Hz with gains scaled by dimensional analysis across all configurations, isolating morphological effects from controller tuning.</p>
+</div>
+
+<div class="col-12 wow fadeInUp">
+  <figure class="c"><img src="images/case12_07.png" alt="Simulation Balancing Screenshot" style="max-width:75%;"></figure>
+</div>
+
+<!-- Morphology Sweep Results -->
+<div class="col-12 wow fadeInUp">
+  <h3>Morphology Sweep Results</h3>
+  <p>A full factorial sweep across 30 configurations evaluated three metrics: maximum recoverable lateral impulse (failure threshold), peak chassis tilt at half threshold, and control effort (torque-time integral) at half threshold. The failure threshold spans 1018–1479 mN·s — a 45% spread driven entirely by geometry. The highest thresholds cluster at L = 17 cm paired with r = 3–4 cm. Critically, large wheels do not uniformly help: because F = τ/r, a larger wheel requires more torque to produce the same ground acceleration, and large-r configurations hit the current ceiling during violent recoveries before reaching the back-EMF speed limit. Control effort grows monotonically with both L and r. The configuration (L = 17, r = 4) cm emerges as the best overall trade-off in simulation.</p>
+</div>
+
+<div class="col-12 wow fadeInUp">
+  <figure class="c"><img src="images/case12_08.png" alt="Full Factorial Morphology Sweep Heatmaps" style="max-width:75%;"></figure>
+</div>
+
+<!-- Testing Protocols -->
+<div class="col-12 wow fadeInUp">
+  <h3>Hardware Testing Protocols</h3>
+  <p>Two physical test protocols are designed to validate the simulation predictions. The Impulse Disturbance Rig uses a pendulum with an adjustable mass and release angle to deliver repeatable lateral impulses to the robot chassis, measuring peak tilt angle, recovery time, and control effort (torque integral) for each morphology configuration. The Obstacle Course Test drives the robot over 3D-printed modular bumps of variable height and spacing, measuring continuous tilt, energy consumed, and success rate under sustained terrain excitation.</p>
+</div>
+
+<div class="col-md-6 wow fadeInUp">
+  <figure class="c"><img src="images/case12_12.png" alt="Impulse Disturbance Rig Diagram" style="max-width:75%;"></figure>
+</div>
+
+<div class="col-md-6 wow fadeInUp">
+  <figure class="c"><img src="images/case12_13.png" alt="Obstacle Course Test Diagram" style="max-width:75%;"></figure>
+</div>
+
+<!-- Electronics and Control -->
+<div class="col-12 wow fadeInUp">
+  <h3>Electronics Stack and Control Architecture</h3>
+  <p>The V3 electronics stack centers on an Arduino Nano ESP32 (ESP32-S3), two iPower GM3506 BLDC motors with SimpleFOC Mini drivers and AS5048A magnetic encoders over SPI, a BNO085 IMU over I2C, and two Waveshare ST3215 HS bus servos over UART for hip actuation. Power is supplied by a 3S LiPo battery; teleoperation is handled by an Xbox controller over Bluetooth via the BluePad32 library. The hip servos run on a separate lower-bandwidth position loop and are not part of the balance loop — the morphology study varies the discrete hip link configuration while holding the controller architecture fixed.</p>
+</div>
+
+<div class="col-md-6 wow fadeInUp">
+  <figure class="c"><img src="images/case12_09.png" alt="V3 System Architecture Diagram" style="max-width:75%;"></figure>
+</div>
+
+<div class="col-md-6 wow fadeInUp">
+  <figure class="c"><img src="images/case12_10.png" alt="Cascaded Balance Control Block Diagram" style="max-width:75%;"></figure>
+</div>
+
+<!-- Research Presentation -->
+<div class="col-12 wow fadeInUp">
+  <h3>Research Presentation</h3>
+  <p>The work was presented as part of the ME 497 undergraduate research showcase, consolidating the analytical, simulation, and hardware contributions of the spring 2026 semester. The poster summarizes the system model, simulation sweep results, and V3 platform in preparation for the IROS 2026 workshop paper submission.</p>
+</div>
+
+<div class="col-md-6 wow fadeInUp">
+  <figure class="c"><img src="images/case12_04.jpeg" alt="Research Poster Presentation" style="max-width:60%;"></figure>
+</div>
+
+<div class="col-md-6 wow fadeInUp">
+  <figure class="c"><img src="images/case12_14.jpg" alt="Presenting Research Poster" style="max-width:80%;"></figure>
+</div>
+
+<!-- Videos -->
+<div class="col-12 wow fadeInUp">
+  <h3>Project Videos</h3>
+  <p>Simulation balancing demonstration and V3 hardware platform in action.</p>
+</div>
+
+<div class="col-md-6 wow fadeInUp">
+  <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px;">
+    <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" title="Wheeled Biped Simulation Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+  </div>
+</div>
+
+<div class="col-md-6 wow fadeInUp">
+  <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px;">
+    <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" title="V3 Hardware Platform Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+  </div>
+</div>
+
+<!-- Results and Next Steps -->
+<div class="col-12 wow fadeInUp">
+  <h3>Results and Next Steps</h3>
+  <p>The spring 2026 semester produced a complete analytical foundation, a validated nonlinear simulation, preliminary sweep results identifying (L = 17, r = 4) cm as the best trade-off, and a near-complete V3 hardware platform. The non-monotonic dependence of failure threshold on wheel radius — a regime where adding wheel radius hurts — is the most interesting prediction to confirm on hardware. Next steps include completing V3 final assembly, running the physical disturbance protocol, and comparing hardware measurements against simulation predictions. The target venue is a workshop at IROS 2026 in Pittsburgh with a late-July submission deadline.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<footer class="footer">
+<div class="container wow fadeIn">
+  <h2>Contact me</h2>
+  <h5>mchopda2@illinois.edu</h5>
+  <ul>
+    <li><a href="https://www.linkedin.com/in/manavchopda/"><i class="fa fa-linkedin"></i></a></li>
+    <li><a href="https://www.youtube.com/@manavchopda"><i class="fa fa-youtube-play"></i></a></li>
+  </ul>
+  <span>© 2025 Manav | All Rights Reserved</span>
+</div>
+</footer>
+</main>
+
+<audio id="link" src="audio/link.mp3" preload="auto"></audio>
+<audio id="hover-audio" src="audio/hover.mp3" preload="auto"></audio>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/isotope.min.js"></script>
+<script src="js/tilt.jquery.js"></script>
+<script src="js/jquery.typewriter.js"></script>
+<script src="js/TweenMax.min.js"></script>
+<script src="js/imagesloaded.pkgd.min.js"></script>
+<script src="js/particles.min.js"></script>
+<script src="js/jquery.parallax.min.js"></script>
+<script src="js/motion.blur.js"></script>
+<script src="js/scripts.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#"/>
+<link href="ico/favicon.png" rel="shortcut icon">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/animate.min.css">
+<link rel="stylesheet" href="css/swiper.min.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+<title>Automated Chess Board</title>
+<style>
+  .case-details figure.c {
+    float: none;
+    text-align: center;
+  }
+  .case-details figure.c img {
+    float: none;
+    width: auto;
+    display: inline-block;
+  }
+</style>
+</head>
+
+<body>
+<div class="preloader">
+  <div class="inner">
+    <div class="loader">
+      <div class="trackbar">
+        <div class="loadbar"></div>
+      </div>
+    </div>
+    <div class="holder"><span class="typewriter" id="typewriter"></span></div>
+  </div>
+</div>
+
+<div class="transition-overlay">
+  <div class="green-layer"></div>
+  <div class="black-layer"></div>
+</div>
+
+<nav class="navigation-menu">
+  <div class="green-layer"></div>
+  <div class="black-layer"></div>
+  <div class="inner">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">Portfolio</a>
+        <ul>
+          <li><a href="showcases-four-cols.html">4 Columns</a></li>
+          <li><a href="showcases-three-cols.html">3 Columns</a></li>
+          <li><a href="showcases-two-cols.html">2 Columns</a></li>
+        </ul>
+      </li>
+      <li><a href="unicord.html">Hobbies</a></li>
+      <li><a href="index-video-bg.html">Contact Me</a></li>
+    </ul>
+    <address>202 E Green St<br>61820 Champaign<br>217-954 3032</address>
+  </div>
+</nav>
+
+<nav class="navbar">
+  <div class="logo"><a href="index.html"><img src="images/logo.png" alt="Image"></a></div>
+  <div class="email-us"><a href="#"><span>mchopda2</span>@illinois.edu</a></div>
+  <div class="sandwich-nav"><b>MENU</b>
+    <div class="sandwich-btn circle" id="sandwich-btn" data-dist="7"><span></span><span></span></div>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="video-bg">
+    <video src="videos/video.mp4" autoplay muted loop></video>
+  </div>
+  <div class="inner">
+    <h2 data-text="Automated Chess Board">Automated Chess Board</h2>
+  </div>
+  <ul class="social-media">
+    <li><a href="https://www.linkedin.com/in/manavchopda/"><i class="fa fa-linkedin"></i></a></li>
+    <li><a href="https://www.youtube.com/@manavchopda"><i class="fa fa-youtube-play"></i></a></li>
+    <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+  </ul>
+  <div class="scroll-down"><b>SCROLL DOWN</b><span></span></div>
+</header>
+
+<div class="page-header-spacing"></div>
+
+<main>
+<section class="case-details">
+<div class="container">
+<div class="row">
+
+<!-- Project Overview -->
+<div class="col-12 wow fadeInUp">
+  <h3>Project Overview</h3>
+  <p>Chess has been a constant in my life for years — I'm a FIDE-rated player and spend a lot of time thinking about the game. That made an automated chessboard a natural personal project: a board that can physically move pieces on its own using a magnet hidden underneath. The concept is elegant — no robotic arm reaching over the board, just pieces gliding across the surface as if by themselves.</p>
+  <p>The system uses a CoreXY gantry beneath the board to position an electromagnet, combined with a reed switch matrix embedded in each square to track piece positions. I made significant progress building the mechanical system and sensor array, though full integration and autonomous operation are still works in progress. This project pushed me into new territory across mechanical design, electronics, and embedded systems.</p>
+</div>
+
+<div class="col-12 wow fadeInUp">
+  <figure class="c"><img src="images/case13_01.jpg" alt="XY Gantry Frame" style="max-width:65%;"></figure>
+</div>
+
+<!-- XY Gantry -->
+<div class="col-12 wow fadeInUp">
+  <h3>CoreXY Gantry Mechanism</h3>
+  <p>The motion system is built on a CoreXY belt configuration with V-slot aluminum extrusion rails. Two NEMA 17 stepper motors drive a single carriage through a crossed-belt arrangement, where both motors act together to move in X or Y — this keeps the motors stationary at the frame rather than riding on the moving axis, reducing the effective moving mass and improving responsiveness.</p>
+  <p>The carriage rides on V-slot wheels and can traverse the full 8×8 grid area. Limit switches at the frame corners provide homing references. Getting the belt tension balanced and the carriage running smoothly without binding was the trickiest mechanical challenge — minor frame squareness errors had a visible effect on diagonal travel accuracy.</p>
+</div>
+
+<div class="col-12 wow fadeInUp">
+  <figure class="c"><img src="images/case13_02.jpg" alt="XY Gantry with Electromagnet Carriage" style="max-width:65%;"></figure>
+</div>
+
+<!-- Electromagnetic Trolley -->
+<div class="col-12 wow fadeInUp">
+  <h3>Electromagnetic Piece Mover</h3>
+  <p>The carriage carries a 12V DC electromagnet mounted flush with the underside of the board surface. When energized, it attracts the steel core inside each chess piece strongly enough to drag it across the board. Turning the magnet off releases the piece cleanly. The electromagnet is powerful enough to move a piece through the 5mm foamboard surface, but weak enough that it won't accidentally drag adjacent pieces — the gap and piece base diameter were chosen to give enough selectivity.</p>
+  <p>Moving around an occupied square requires routing the carriage through half-square diagonal paths to avoid catching neighboring pieces — this adds path planning complexity that I started mapping out but haven't fully implemented in firmware yet.</p>
+</div>
+
+<!-- Reed Switch Sensor Board -->
+<div class="col-12 wow fadeInUp">
+  <h3>Reed Switch Sensor Matrix</h3>
+  <p>Each of the 64 squares on the board has a reed switch embedded beneath it, triggering when a chess piece (with a small magnet in its base) is present. The switches are wired into an 8×8 matrix and read through a set of multiplexer ICs, allowing the Arduino to scan the entire board state with a handful of digital pins rather than 64 dedicated inputs.</p>
+  <p>Soldering and wiring 64 reed switches with consistent geometry was one of the most time-intensive parts of the build. I organized the wiring into ribbon cable bundles to keep it manageable. Getting consistent switch triggering across the board required careful magnet sizing — too weak and distant squares wouldn't trigger reliably; too strong and adjacent squares would false-positive.</p>
+</div>
+
+<div class="col-md-6 wow fadeInUp">
+  <figure class="c"><img src="images/case13_03.jpg" alt="Reed Switch Strips" style="max-width:80%;"></figure>
+</div>
+
+<div class="col-md-6 wow fadeInUp">
+  <figure class="c"><img src="images/case13_04.jpg" alt="Reed Switches Installed in Board" style="max-width:80%;"></figure>
+</div>
+
+<!-- Electronics -->
+<div class="col-12 wow fadeInUp">
+  <h3>Electronics and Control</h3>
+  <p>The electronics stack is built around an Arduino Nano, two A4988 stepper motor drivers for the X and Y axes, and three 74HC4067 16-channel multiplexers to handle the sensor matrix. Everything is assembled on perfboard rather than a custom PCB, which made debugging easier but added bulk. The electromagnet is switched through a relay module controlled by a digital output pin.</p>
+  <p>Power comes from a 12V supply shared between the stepper drivers and electromagnet, with the Arduino running off USB or a separate 5V rail. Keeping the high-current electromagnet switching from injecting noise into the sensor readings required some basic decoupling — a lesson learned after early sensor reads came back erratic when the magnet was switching.</p>
+</div>
+
+<div class="col-12 wow fadeInUp">
+  <figure class="c"><img src="images/case13_05.jpg" alt="Electronics Stack" style="max-width:60%;"></figure>
+</div>
+
+<!-- Software -->
+<div class="col-12 wow fadeInUp">
+  <h3>Software and Where I Got To</h3>
+  <p>The firmware handles stepper motion in steps-per-square units, homing sequences on startup, reed switch polling through the multiplexers, and electromagnet control. The motion primitives — move to square (row, col), energize, move, de-energize — work reliably in isolation. The sensor scanning loop correctly reads piece presence across the full board.</p>
+  <p>What I didn't get to: integrating a chess engine to generate moves and translating those moves into full piece-routing sequences, including the collision-avoidance paths around occupied squares. That integration is the remaining gap between where the project sits now and a fully autonomous board. It's a clean software problem at this point — the hardware is capable, and completing it is something I plan to come back to.</p>
+</div>
+
+<!-- Reflections -->
+<div class="col-12 wow fadeInUp">
+  <h3>What I Learned</h3>
+  <p>This project gave me hands-on experience with CoreXY motion systems, stepper driver tuning, multiplexed sensor networks, and the practical realities of building hardware that lives at the boundary of mechanical, electrical, and software work. Debugging a system where all three interact simultaneously — and where a mechanical binding issue looks identical to a firmware bug until you spend an hour isolating it — sharpened how I approach system-level troubleshooting.</p>
+  <p>Making significant progress on something this ambitious while it's still incomplete taught me as much as finishing a simpler project would have. I know exactly what's left and how I'd approach it — and I'm looking forward to getting back to it.</p>
+</div>
+
+<!-- Demo video -->
+<div class="col-12 wow fadeInUp">
+  <h3>Demo Video</h3>
+</div>
+
+<div class="col-md-4 offset-md-4 wow fadeInUp">
+  <div class="video-container" style="position: relative; padding-bottom: 177.78%; height: 0; overflow: hidden; max-width: 100%; margin-bottom: 30px;">
+    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+    src="https://www.youtube.com/embed/PGhKz236Hk0"
+    title="Smart Chess Board Demo"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+    </iframe>
+  </div>
+</div>
+
+</div>
+</div>
+</section>
+
+<footer class="footer">
+<div class="container wow fadeIn">
+  <h2>Contact me</h2>
+  <h5>mchopda2@illinois.edu</h5>
+  <ul>
+    <li><a href="https://www.linkedin.com/in/manavchopda/"><i class="fa fa-linkedin"></i></a></li>
+    <li><a href="https://www.youtube.com/@manavchopda"><i class="fa fa-youtube-play"></i></a></li>
+  </ul>
+  <span>© 2025 Manav | All Rights Reserved</span>
+</div>
+</footer>
+</main>
+
+<audio id="link" src="audio/link.mp3" preload="auto"></audio>
+<audio id="hover-audio" src="audio/hover.mp3" preload="auto"></audio>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/isotope.min.js"></script>
+<script src="js/tilt.jquery.js"></script>
+<script src="js/jquery.typewriter.js"></script>
+<script src="js/TweenMax.min.js"></script>
+<script src="js/imagesloaded.pkgd.min.js"></script>
+<script src="js/particles.min.js"></script>
+<script src="js/jquery.parallax.min.js"></script>
+<script src="js/motion.blur.js"></script>
+<script src="js/scripts.js"></script>
+
+</body>
+</html>
