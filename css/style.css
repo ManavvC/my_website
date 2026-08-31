@@ -2907,4 +2907,85 @@ margin-bottom: 20px;
 
 }
 
+/* EXPERIENCE BOX */
+.side-content-block .inner .holder.exp-box {
+  background: #000;
+  color: #fff;
+  border-radius: 0;
+  padding: 2.25rem 2.5rem;
+  font-family: "Courier New", Courier, monospace;
+  letter-spacing: .3px;
+  /* never wider than half the screen; bullets wrap rather than push past that */
+  max-width: 50%;
+  width: 100%;
+}
+.exp-logo {
+  height: .78em;
+  width: auto;
+  vertical-align: -.14em;
+  margin-right: .4em;
+}
+/* the Formlabs mark sits inside a circle, so it reads smaller at the same height */
+.exp-logo.exp-logo-formlabs {
+  height: .95em;
+}
+/* anchor the background to its bottom edge so the lower part isn't cropped */
+.side-content-block.bg-anchor-bottom {
+  background-position: center bottom;
+}
+.side-content-block .inner .holder.exp-box .exp-head,
+.side-content-block .inner .holder.exp-box .exp-sub {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 24px;
+}
+.side-content-block .inner .holder.exp-box .exp-head {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.25;
+  /* trim the first line's half-leading so the padding above reads as the real gap */
+  margin-top: -.125em;
+}
+.side-content-block .inner .holder.exp-box .exp-sub {
+  font-size: 17px;
+  font-style: italic;
+  line-height: 1.5;
+  margin-top: 5px;
+  margin-bottom: 14px;
+}
+.side-content-block .inner .holder.exp-box .exp-list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+.side-content-block .inner .holder.exp-box .exp-list li {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #fff;
+  /* a wrapped bullet hangs under its text, not under the ▪ */
+  padding-left: 1.35em;
+  text-indent: -1.35em;
+}
+/* and trim the last line's half-leading to match */
+.side-content-block .inner .holder.exp-box .exp-list li:last-child {
+  margin-bottom: -.35em;
+}
+.exp-line {
+  display: block;
+}
+.exp-head .exp-line:last-child,
+.exp-sub .exp-line:last-child { text-align: right; }
+
+@media only screen and (max-width: 767px) {
+  .side-content-block .inner .holder.exp-box { padding: 1.75rem 1.5rem; max-width: 100%; }
+  .side-content-block .inner .holder.exp-box .exp-head,
+  .side-content-block .inner .holder.exp-box .exp-sub { display: block; }
+  .exp-head .exp-line:last-child,
+  .exp-sub .exp-line:last-child { text-align: left; }
+  .side-content-block .inner .holder.exp-box .exp-head { font-size: 22px; }
+  .side-content-block .inner .holder.exp-box .exp-sub { font-size: 15px; }
+  .side-content-block .inner .holder.exp-box .exp-list li { font-size: 14px; }
+}
+
 /*# sourceMappingURL=style.css.map */
