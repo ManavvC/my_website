@@ -1664,6 +1664,14 @@ margin-bottom: 20px;
 .works ul li figure figcaption a:hover {
   text-decoration: none;
 }
+.works ul li figure figcaption h3 a.title-link {
+  display: inline;
+  color: inherit;
+  font: inherit;
+  border-bottom: none;
+  padding-bottom: 0;
+  opacity: 1;
+}
 
 /* WORKS FILTER */
 .filter-bar {
